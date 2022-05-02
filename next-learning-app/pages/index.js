@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Home() {
-  const [userNumber, setUserNumber] = useState(null);
+  const [userNumber, setUserNumber] = useState('');
   const handleUserNumber = (e) => {
     e = e.target.value;
     setUserNumber(e);

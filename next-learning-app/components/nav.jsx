@@ -42,6 +42,20 @@ const Nav = () => (
           Demo
         </a>
       </Link>
+      <Link href="/user-list">
+        <a
+          sx={{ color: 'text', fontSize: 3, cursor: 'pointer', color: 'white' }}
+        >
+          Users
+        </a>
+      </Link>
+      <Link href="/add-new-user">
+        <a
+          sx={{ color: 'text', fontSize: 3, cursor: 'pointer', color: 'white' }}
+        >
+          Add New User
+        </a>
+      </Link>
     </nav>
   </header>
 );
