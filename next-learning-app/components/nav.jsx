@@ -60,7 +60,14 @@ const Nav = () => (
         <a
           sx={{ color: 'text', fontSize: 3, cursor: 'pointer', color: 'white' }}
         >
-          Add New User
+          Add-New-User
+        </a>
+      </Link>
+      <Link href="/user-details">
+        <a
+          sx={{ color: 'text', fontSize: 3, cursor: 'pointer', color: 'white' }}
+        >
+          Users-Details
         </a>
       </Link>
     </nav>
