@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Veg Pizza",
+    "price": {
+      "small": 1050,
+      "medium": 1750,
+      "large": 3000
+    },
+    "img": "/img/pizza1.png"
+  },
+  {
+    "id": 2,
+    "name": "Margherita",
+    "price": {
+      "small": 1000,
+      "medium": 1650,
+      "large": 2500
+    },
+    "img": "/img/pizza2.png"
+  },
+  {
+    "id": 3,
+    "name": "7 Cheezy",
+    "price": {
+      "small": 1550,
+      "medium": 1950,
+      "large": 3100
+    },
+    "img": "/img/pizza3.png"
+  },
+  {
+    "id": 4,
+    "name": "English Retreat",
+    "price": {
+      "small": 1050,
+      "medium": 1750,
+      "large": 3000
+    },
+    "img": "/img/pizza4.png"
+  },
+  {
+    "id": 5,
+    "name": "Garden Delight",
+    "price": {
+      "small": 1650,
+      "medium": 1750,
+      "large": 2100
+    },
+    "img": "/img/pizza5.png"
+  },
+  {
+    "id": 6,
+    "name": "Farm Villa",
+    "price": {
+      "small": 1200,
+      "medium": 1750,
+      "large": 2600
+    },
+    "img": "/img/pizza6.png"
+  },
+  {
+    "id": 7,
+    "name": "Burn To Hell",
+    "price": {
+      "small": 1250,
+      "medium": 1850,
+      "large": 2700
+    },
+    "img": "/img/pizza7.png"
+  },
+  {
+    "id": 8,
+    "name": "Country Side",
+    "price": {
+      "small": 1050,
+      "medium": 1750,
+      "large": 3000
+    },
+    "img": "/img/pizza8.png"
+  }
+]
