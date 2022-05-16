@@ -1,18 +1,23 @@
-import Head from 'next/head'
-import Featured from '../components/Featured'
-import PizzaList from '../components/PizzaList'
-import styles from '../styles/Home.module.css'
+import axios from 'axios';
 
-export default function Home() {
+import Featured from '../components/Featured';
+import PizzaList from '../components/PizzaList';
+import styles from '../styles/Home.module.css';
+
+export default function Home({ pizzasListData }) {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Pizzzzaa...</title>
-        <meta name="description" content="online pizza shop" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Featured />
-      <PizzaList />
+      <PizzaList pizzasListData={pizzasListData} />
     </div>
-  )
+  );
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get('http://localhost:3000/api/products');
+  return {
+    props: {
+      pizzasListData: res.data,
+    },
+  };
+};

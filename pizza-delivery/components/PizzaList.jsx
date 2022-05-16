@@ -4,13 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/PizzaList.module.css';
 import PizzaCard from './PizzaCard';
 
-const PizzaList = () => {
-  const [pizzasInfo, setPizzasInfo] = useState([])
-  useEffect(() => async () => {
-    const pizzasListData = await axios.get('/api/pizzaInfo');
-    setPizzasInfo(pizzasListData.data);
-    return console.log('Unmount');
-  },[])
+const PizzaList = ({pizzasListData}) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>THE BEST PIZZA YOU'VE EVER TASTE</h1>
@@ -20,8 +14,8 @@ const PizzaList = () => {
         <p>own home with the ones you love, we say.</p>
       </div>
       <div className={styles.wrapper}>
-        {pizzasInfo.map((pizzaInfo, index) => {
-          return <PizzaCard pizzaInfo={pizzaInfo} key={index} />;
+        {pizzasListData.map((pizza) => {
+          return <PizzaCard pizzaInfo={pizza} key={pizza._id} />;
         })}
       </div>
     </div>

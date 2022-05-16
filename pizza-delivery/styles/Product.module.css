@@ -12,6 +12,7 @@
 .right {
   flex: 1;
   padding: 20px;
+  margin-top: 50px;
 }
 .imgContainer {
   width: 80%;
@@ -34,6 +35,9 @@
   height: 30px;
   position: relative;
   cursor: pointer;
+}
+.size:active {
+  border: 3px dotted teal;
 }
 .size:nth-child(2) {
   width: 40px;
@@ -74,7 +78,6 @@
 }
 .button {
   height: 30px;
-  margin-left: 10px;
   background-color: #d1411e;
   color: white;
   border: none;
