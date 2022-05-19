@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Image from 'next/image';
 import { useState } from 'react';
+
 import AddButton from '../../components/AddButton';
 import AddNewPizza from '../../components/AddNewPizza';
 import styles from '../../styles/Admin.module.css';

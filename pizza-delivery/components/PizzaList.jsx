@@ -1,10 +1,7 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-
 import styles from '../styles/PizzaList.module.css';
 import PizzaCard from './PizzaCard';
 
-const PizzaList = ({pizzasListData}) => {
+const PizzaList = ({ pizzasListData }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>THE BEST PIZZA YOU'VE EVER TASTE</h1>

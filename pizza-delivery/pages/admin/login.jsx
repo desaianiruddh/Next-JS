@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import styles from '../../styles/Login.module.css';
 import { useCookies } from 'react-cookie';
+
+import styles from '../../styles/Login.module.css';
 
 const Login = () => {
   const [cookies] = useCookies(['token']);
@@ -26,7 +27,6 @@ const Login = () => {
       setError(true);
     }
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>

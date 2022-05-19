@@ -2,6 +2,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { addProduct } from '../../redux/cartSlice';
 import styles from '../../styles/Product.module.css';
 
