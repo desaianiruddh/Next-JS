@@ -1,11 +1,11 @@
+import axios from 'axios';
+
 import styles from '../../styles/Order.module.css';
 import Image from 'next/image';
-import axios from 'axios';
 
 const Order = ({ order }) => {
   const status = order.status;
-  const {_id,customer,total,address, method} = order
-console.log(order);
+  const { _id, customer, total, address, method } = order;
   const statusClass = (index) => {
     if (index - status < 1) return styles.done;
     if (index - status === 1) return styles.inProgress;
@@ -36,7 +36,7 @@ console.log(order);
                   <span className={styles.address}>{address}</span>
                 </td>
                 <td>
-                  <span className={styles.total}>${total}</span>
+                  <span className={styles.total}>Rs.{total}</span>
                 </td>
               </tr>
             </tbody>
@@ -110,7 +110,7 @@ console.log(order);
             <b className={styles.totalTextTitle}>Total:</b>Rs. {order.total}
           </div>
           <button disabled className={styles.button}>
-            {method===0?'Cash On Delivery':'PAID'}
+            {method === 0 ? 'COD' : 'PAID'}
           </button>
         </div>
       </div>

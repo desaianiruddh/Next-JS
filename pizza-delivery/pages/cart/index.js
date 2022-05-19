@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { reset } from '../../redux/cartSlice';
 import OrderDetail from '../../components/OrderDetail';
+import Link from 'next/link'
 
 const Cart = () => {
   const { cart } = useSelector((state) => state);
@@ -60,7 +61,6 @@ const Cart = () => {
                 ],
               })
               .then((orderId) => {
-                // Your code here after create the order
                 return orderId;
               });
           }}
@@ -144,7 +144,7 @@ const Cart = () => {
                     </td>
                     <td>
                       <span className={styles.total}>
-                        ${product.price * product.quantity}
+                        Rs.{product.price * product.quantity}
                       </span>
                     </td>
                   </tr>
@@ -206,7 +206,7 @@ const Cart = () => {
         </>
       ) : (
         <div className={styles.emptyCartText}>
-          Cart is Empty, Add Delicious Pizza From Home
+          Cart is Empty, Add Delicious Pizza From <Link href='/'><a className={styles.homeLink}>Home</a></Link>
         </div>
       )}
       {clickedCheckout && (

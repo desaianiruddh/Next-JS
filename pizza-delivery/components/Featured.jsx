@@ -1,6 +1,7 @@
-import styles from '../styles/Featured.module.css';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
+
+import styles from '../styles/Featured.module.css';
 
 const Featured = () => {
   const [index, setIndex] = useState(0);
@@ -13,8 +14,7 @@ const Featured = () => {
   const handleArrow = (direction) => {
     if (direction === 'left') {
       setIndex(index !== 0 ? index - 1 : 2);
-    }
-    else if (direction === 'right') {
+    } else if (direction === 'right') {
       setIndex(index !== 2 ? index + 1 : 0);
     }
   };

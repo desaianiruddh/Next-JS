@@ -1,5 +1,10 @@
+.title {
+  text-decoration: underline;
+  font-size: 24px;
+  text-align: center;
+}
 .container {
-  padding: 50px;
+  padding: 10px;
   display: flex;
 }
 .item {
@@ -7,19 +12,21 @@
 }
 .table {
   width: 100%;
-  border-spacing: 20px;
+  border-spacing: 5px;
   text-align: left;
+  margin-right: 5px;
+  border: 1px solid #c51b29;
 }
 .button {
   border: none;
   color: white;
   padding: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  background-color: #c51b29;
 }
-.button:first-child {
-  background-color: teal;
-  margin-right: 10px;
-}
-.button:last-child {
-  background-color: crimson;
+.addPizzaBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
