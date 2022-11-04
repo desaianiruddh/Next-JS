@@ -2,14 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
+import { addProduct } from '../../redux/cartSlice';
 import data from '../../utils/data';
 
 const Slug = () => {
   const { query } = useRouter();
   const { slug } = query;
+  const dispatch = useDispatch();
+
   const product = data.products.find((product) => product.slug === slug);
   if (!product) return <div>Product Not Found</div>;
+
   return (
     <>
       <div className="py-2">
@@ -48,7 +53,12 @@ const Slug = () => {
               <div>Status</div>
               <div>{product.countInStock > 0 ? 'In stock' : 'Unavailable'}</div>
             </div>
-            <button className="primary-button w-full">Add to cart</button>
+            <button
+              className="primary-button w-full"
+              onClick={() => dispatch(addProduct({ ...product, quantity: 1 }))}
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
