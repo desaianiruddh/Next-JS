@@ -1,11 +1,22 @@
 import Link from 'next/link';
 import React, { use } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { addProduct } from '../redux/cartSlice';
 
 const ProductItem = ({ product }) => {
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const addToCartHandler = () => {
+    const existItem = cart.cartItems.find((item) => item.slug === product.slug);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+
+    if (product.countInStock < quantity) {
+      alert('Sorry, Product is out of stock');
+      return;
+    }
+    dispatch(addProduct({ ...product, quantity }));
+  };
   return (
     <div className="card">
       <Link href={`/product/${product.slug}`} legacyBehavior>
@@ -28,7 +39,7 @@ const ProductItem = ({ product }) => {
         <button
           className="primary-button"
           type="button"
-          onClick={() => dispatch(addProduct({ ...product, quantity: 1 }))}
+          onClick={addToCartHandler}
         >
           Add to cart
         </button>

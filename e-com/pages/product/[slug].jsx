@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { addProduct } from '../../redux/cartSlice';
 import data from '../../utils/data';
@@ -10,11 +10,22 @@ import data from '../../utils/data';
 const Slug = () => {
   const { query } = useRouter();
   const { slug } = query;
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const product = data.products.find((product) => product.slug === slug);
   if (!product) return <div>Product Not Found</div>;
 
+  const addToCartHandler = () => {
+    const existItem = cart.cartItems.find((item) => item.slug === slug);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+
+    if (product.countInStock < quantity) {
+      alert('Sorry, Product is out of stock');
+      return;
+    }
+    dispatch(addProduct({ ...product, quantity }));
+  };
   return (
     <>
       <div className="py-2">
@@ -55,7 +66,7 @@ const Slug = () => {
             </div>
             <button
               className="primary-button w-full"
-              onClick={() => dispatch(addProduct({ ...product, quantity: 1 }))}
+              onClick={addToCartHandler}
             >
               Add to cart
             </button>
