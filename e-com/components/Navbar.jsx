@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="flex h-12 items-center px-4 justify-between shadow-md">
       <Link href="/" legacyBehavior>
-        <a className="text-lg font-bold">amazona</a>
+        <a className="text-lg font-bold">E-Com</a>
       </Link>
       <div>
         <Link href="/cart" legacyBehavior>
